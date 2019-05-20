@@ -1,0 +1,24 @@
+docker run \
+  --privileged \
+  --detach \
+  --name=tljh-dev \
+  --publish 12000:80 \
+  --mount type=bind,source=$(pwd),target=/srv/src \
+  tljh-systemd
+
+
+docker run \
+  --privileged \
+  --detach \
+  --name=tljh-dev \
+  --publish 12000:80 \
+  --mount type=bind,source=%cd%,target=/srv/src \
+  tljh-systemd
+
+docker run --privileged --detach --publish 1234:80 --mount type=bind,source=%cd%,target=/srv/src e8e51760d6ec
+
+docker run --privileged --detach --publish 1234:80  tljh-systemd
+
+
+
+docker run --privileged --detach --publish 1235:80  bitterfly/tljh-final

@@ -26,3 +26,9 @@ ENV TLJH_BOOTSTRAP_PIP_SPEC=/srv/src
 ENV PATH=/opt/tljh/hub/bin:${PATH}
 
 CMD ["/bin/bash", "-c", "exec /sbin/init --log-target=journal 3>&1"]
+
+RUN mkdir -p /srv/src
+ADD ./ /srv/src/
+WORKDIR /srv/src
+CMD ["ls","-la"]
+RUN python3 /srv/src/bootstrap/bootstrap.py --admin admin

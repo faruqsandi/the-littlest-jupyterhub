@@ -1,0 +1,9 @@
+version: '3'
+services:
+    tljh-isr:
+        build:
+          context: ./
+          dockerfile: ./integration-tests/Dockerfile
+        ports:
+            - 1234:80
+        image: tljh-isr
